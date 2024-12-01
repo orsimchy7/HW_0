@@ -47,7 +47,7 @@ void twoSum(int nums[], int nums_size, int target) {
 					if (numsIndexes[i] == *l && numsIndexes[i-1] != numsIndexes[i] ) numSmall = i;
 					else if (numsIndexes[i] == *r && numsIndexes[i] != numsIndexes[i+1]) numBig = i;
 				}
-			printf ("(%d, %d)" , numSmall, numBig);
+			printf ("(%d, %d)\n" , numSmall, numBig);
 			free(numsIndexes);
 			return;
 			}
