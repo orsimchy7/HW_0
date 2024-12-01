@@ -33,8 +33,8 @@ void twoSum(int nums[], int nums_size, int target) {
 	int* l = nums;
 	int* r = nums + nums_size - 1;
 	while (l < r) { //search 2 nums in sorted array
-		if (*l + *r < target) r--;
-		else if (*l + *r > target) l++;
+		if (*l + *r < target) l++;
+		else if (*l + *r > target) r--;
 		else { //taking indexes of *most* early & late appearences
 			for (int i = 0 ; i < nums_size ; i++) {
 				if (i==0) {
