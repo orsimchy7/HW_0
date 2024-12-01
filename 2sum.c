@@ -33,19 +33,19 @@ void twoSum(int nums[], int nums_size, int target) {
 	int* l = nums;
 	int* r = nums + nums_size - 1;
 	while (l < r) { //search 2 nums in sorted array
-		if (*l + *r < target) l++;
-		else if (*l + *r > target) r--;
+		if ((*l) + (*r) < target) l++;
+		else if ((*l) + (*r) > target) r--;
 		else { //taking indexes of *most* early & late appearences
 			for (int i = 0 ; i < nums_size ; i++) {
 				if (i==0) {
-					if (numsIndexes[i] == *l) numSmall = i;
+					if (numsIndexes[i] == (*l)) numSmall = i;
 				}
 				else if (i==nums_size-1) {
-					if (numsIndexes[i] == *r) numBig = i;
+					if (numsIndexes[i] == (*r)) numBig = i;
 				}
 				else {
-					if (numsIndexes[i] == *l && numsIndexes[i-1] != numsIndexes[i] ) numSmall = i;
-					else if (numsIndexes[i] == *r && numsIndexes[i] != numsIndexes[i+1]) numBig = i;
+					if ((numsIndexes[i] == (*l)) && (numsIndexes[i-1] != numsIndexes[i]) ) numSmall = i;
+					else if ((numsIndexes[i] == (*r)) && (numsIndexes[i] != numsIndexes[i+1])) numBig = i;
 				}
 			printf ("(%d, %d)\n" , numSmall, numBig);
 			free(numsIndexes);
