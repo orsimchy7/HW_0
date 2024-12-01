@@ -40,7 +40,7 @@ void twoSum(int nums[], int nums_size, int target) {
 				if (i==0) {
 					if (numsIndexes[i] == *l) numSmall = i;
 				}
-				if (i==nums_size-1) {
+				else if (i==nums_size-1) {
 					if (numsIndexes[i] == *r) numBig = i;
 				}
 				else {
