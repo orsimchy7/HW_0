@@ -11,8 +11,11 @@ int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 	char string[MAX_STRING_LEN];
 	fgets(string, MAX_STRING_LEN, stdin);
-	string[strlen(string) - 1] = '\0';
 
+	//string[strlen(string) - 1] = '\0';
+    if (string[strlen(string) - 1] == '\n') {
+        string[strlen(string) - 1] = '\0';
+    }
 	//create histogram for 10 digits
 	int hist[10] = {0};
 
@@ -30,12 +33,22 @@ int main() {
 
 	}
 
-	//pront histogram
-	for(int i = 0; i< 9; i++){
+	//print histogram
+	/*for(int i = 0; i< 9; i++){
 		printf("%d " , hist[i]);
 	}
 
 	printf("%d\n", hist[9]);
+	*/
+
+    // Print histogram
+    for (int i = 0; i < 10; i++) {
+        if (i > 0) {
+            printf(" ");
+        }
+        printf("%d", hist[i]);
+    }
+    printf("\n");
 
     return 0;
 }
